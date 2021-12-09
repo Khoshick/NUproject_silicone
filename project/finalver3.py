@@ -13,7 +13,7 @@ st.sidebar.header('Enter the set process parameters')
 df = pd.read_csv("preprocessed_df.csv")
 df_silica_target=df['Silica_Concentrate']
 df_silica_target = pd.DataFrame(data = df_silica_target,columns = ["Silica_Concentrate"])
-df_dropped_test=df.drop(columns=['date','Silica_Concentrate','Iron_Concentrate])
+df_dropped_test=df.drop(columns=['date','Silica_Concentrate','Iron_Concentrate'])
 x_train,x_test,y_train,y_test=train_test_split(df_dropped_test,df_silica_target,test_size=0.2, random_state=17)  
 with st.sidebar.form(key="form1"):
  Ironfeed = st.number_input('Iron Feed', value=60.18)
