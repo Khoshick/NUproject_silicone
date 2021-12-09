@@ -8,7 +8,7 @@ from joblib import load
 import seaborn as sns
 
 st.title('Silica percent predictor')
-st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set process parameters')
+st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set mining process parameters')
 st.sidebar.header('Enter the set process parameters')
 # df = pd.read_csv("preprocessed_df.csv")
 # df_silica_target=df['Silica_Concentrate']
