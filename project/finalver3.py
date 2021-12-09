@@ -6,14 +6,14 @@ from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from joblib import load
 import seaborn as sns
-ANN_model = keras.models.load_model("silicon_ySS.h5")
+
 st.title('Silica percent predictor')
 st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set process parameters')
 st.sidebar.header('Enter the set process parameters')
 df = pd.read_csv("preprocessed_df.csv")
 df_silica_target=df['Silica_Concentrate']
 df_silica_target = pd.DataFrame(data = df_silica_target,columns = ["Silica_Concentrate"])
-df_dropped_test=df.drop(columns=['date','Silica_Concentrate'])
+df_dropped_test=df.drop(columns=['date','Silica_Concentrate','Iron_Concentrate])
 x_train,x_test,y_train,y_test=train_test_split(df_dropped_test,df_silica_target,test_size=0.2, random_state=17)  
 with st.sidebar.form(key="form1"):
  Ironfeed = st.number_input('Iron Feed', value=60.18)
@@ -62,6 +62,7 @@ input= pd.DataFrame(np.array([[Ironfeed,SilicaFeed,StarchFlow,AminaFlow,OrePulpF
 # input = normalize(input) 
 print("Formula Input", input)
 scaler = load("scaler.joblib")
+ANN_model = keras.models.load_model("silicon_ySS.h5")
 input = scaler.transform(input)
 predict=ANN_model.predict(input)
 st.subheader('Silica Percent =')
