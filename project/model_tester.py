@@ -4,7 +4,7 @@ from joblib import load
 df = pd.read_csv("preprocessed_df.csv")
 df_silica_target=df['Silica_Concentrate']
 df_silica_target = pd.DataFrame(data = df_silica_target,columns = ["Silica_Concentrate"])
-df_dropped_test=df.drop(columns=['date','Silica_Concentrate'])
+df_dropped_test=df.drop(columns=['date','Silica_Concentrate','Iron_Concentrate'])
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(df_dropped_test,df_silica_target,test_size=0.2, random_state=17)  
 ANN_model = keras.models.load_model("silicon_ySS.h5")
