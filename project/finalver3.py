@@ -66,5 +66,6 @@ ANN_model = keras.models.load_model("silicon_ySS.h5")
 input = scaler.transform(input)
 predict=ANN_model.predict(input)
 st.subheader('Silica Percent =')
-st.write(predict)
 st.markdown('Change the process parameters if the above value is greater than 2.5')
+st.write(predict)
+
