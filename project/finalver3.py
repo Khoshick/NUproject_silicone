@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from joblib import load
 import seaborn as sns
-ANN_model = keras.models.load_model("https://github.com/Khoshick/NUproject_silicone/blob/main/project/silicon_ySS.h5")
+ANN_model = keras.models.load_model("silicon_ySS.h5")
 st.title('Silica percent predictor')
 st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set process parameters')
 st.sidebar.header('Enter the set process parameters')
