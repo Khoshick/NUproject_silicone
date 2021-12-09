@@ -8,7 +8,7 @@ from joblib import load
 import seaborn as sns
 ANN_model = keras.models.load_model("silicon_ySS.h5")
 st.title('Silica percent predictor')
-st.markdown('Mining plant project')
+st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set process parameters')
 st.sidebar.header('Enter values')
 df = pd.read_csv("preprocessed_df.csv")
 df_silica_target=df['Silica_Concentrate']
