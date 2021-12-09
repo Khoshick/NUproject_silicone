@@ -6,9 +6,12 @@ from sklearn.model_selection import train_test_split
 from tensorflow import keras
 from joblib import load
 import seaborn as sns
+from PIL import Image
 
 st.title('Silica percent predictor')
 st.markdown('The goal of this project is to remove the wastage of Iron ore by predicting the impurity in advance for the set mining process parameters')
+st.subheader('Froth floatation Process schematic')
+st.image("https://upload.wikimedia.org/wikipedia/commons/d/d0/Flotation_cell.jpg")
 st.sidebar.header('Enter the set process parameters')
 # df = pd.read_csv("preprocessed_df.csv")
 # df_silica_target=df['Silica_Concentrate']
